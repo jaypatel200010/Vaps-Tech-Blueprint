@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frappe ERPNext Integration Blueprint Dashboard - High quality implementation flows for Multi-Channel E-commerce, native Job Portal, Personal Messaging, and Streaming Subscriptions.">
+  <title>Frappe ERPNext Integration Blueprint</title>
+  
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand-section">
+        <div class="brand-icon">
+          <!-- Custom SVG Logo -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="brand-name">
+          <h1>nexaflowtech</h1>
+          <span>Vaps Tech Blueprint</span>
+        </div>
+      </div>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item active" data-target="overview">
+            <button>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+              Overview
+            </button>
+          </li>
+          <li class="nav-item" data-target="ecommerce">
+            <button>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              E-commerce Sync
+            </button>
+          </li>
+          <li class="nav-item" data-target="jobs">
+            <button>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              Native Job Portal
+            </button>
+          </li>
+          <li class="nav-item" data-target="messaging">
+            <button>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Social Media Chat
+            </button>
+          </li>
+          <li class="nav-item" data-target="streaming">
+            <button>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              Streaming Subscriptions
+            </button>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="client-tag">
+          <div class="client-avatar" style="background: var(--color-jobs); color: white;">V</div>
+          <div class="client-info">
+            <p>Vaps Tech Rollout</p>
+            <span>by nexaflowtech</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Top header bar -->
+      <header class="top-header">
+        <div class="page-title">
+          <h2 id="current-page-title" class="gradient-text">Integration Dashboard</h2>
+          <p id="current-page-desc">Centralized overview of the transition into Frappe ERPNext.</p>
+        </div>
+        
+        <div class="header-status">
+          <div class="status-badge erpnext">
+            <span class="status-indicator"></span>
+            ERPNext Server: Active
+          </div>
+          <div class="status-badge db">
+            <span class="status-indicator"></span>
+            Mock DB: Online
+          </div>
+        </div>
+      </header>
+
+      <!-- TAB 1: OVERVIEW PAGE -->
+      <section id="overview" class="page-section active">
+        
+        <!-- Dashboard counter cards -->
+        <div class="overview-grid">
+          
+          <div class="glass-panel overview-card ecommerce" data-module="ecommerce">
+            <div class="card-header-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </div>
+            <div class="card-body">
+              <h3 id="count-ecommerce">0</h3>
+              <p>E-commerce Orders Synced</p>
+            </div>
+            <div class="card-footer-details">
+              <span class="detail-lbl">Active Channels</span>
+              <span class="detail-val">Shopify/Amazon/Flipkart</span>
+            </div>
+          </div>
+          
+          <div class="glass-panel overview-card jobs" data-module="jobs">
+            <div class="card-header-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="card-body">
+              <h3 id="count-jobs">0</h3>
+              <p>Job Applications Logged</p>
+            </div>
+            <div class="card-footer-details">
+              <span class="detail-lbl">Portal Engine</span>
+              <span class="detail-val">ERPNext Built-In</span>
+            </div>
+          </div>
+          
+          <div class="glass-panel overview-card messaging" data-module="messaging">
+            <div class="card-header-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 8h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2v4l-4-4H9a1.9 1.9 0 0 1-2-2c0-1.1.9-2 2-2h8V8z"/><path d="M5 14h6l4 4v-4a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2z"/></svg>
+            </div>
+            <div class="card-body">
+              <h3 id="count-messages">0</h3>
+              <p>One-on-One Chat Messages</p>
+            </div>
+            <div class="card-footer-details">
+              <span class="detail-lbl">Protocol</span>
+              <span class="detail-val">Socket.io WebSockets</span>
+            </div>
+          </div>
+          
+          <div class="glass-panel overview-card streaming" data-module="streaming">
+            <div class="card-header-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/></svg>
+            </div>
+            <div class="card-body">
+              <h3 id="count-streaming">0</h3>
+              <p>Streaming Subscriptions</p>
+            </div>
+            <div class="card-footer-details">
+              <span class="detail-lbl">Auth Validation</span>
+              <span class="detail-val">REST Webhooks</span>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Project Pitch and Strategy -->
+        <div class="glass-panel info-card gradient-glow">
+          <h3>
+            <svg viewBox="0 0 24 24" stroke="var(--color-overview)" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Strategic Architecture Proposal
+          </h3>
+          <p>
+            **Vaps Tech** currently operates an **Education ERP** managing admissions, courses, and student structures. Rather than disrupting that core operational system, **nexaflowtech** proposes deploying **Frappe ERPNext** to act as the master engine for all other business domains: **Multi-channel Sales/E-commerce, Recruitment, Social Media Chat, and Video Subscriptions**.
+          </p>
+          <div class="divider"></div>
+          <p style="margin-bottom: 1rem;">
+            This blueprint web application provides an interactive walk-through of the design workflows and data mappings. By clicking on specific **Doctype badges** inside any section, you can review the database schemas that will be deployed.
+          </p>
+          <div style="background: rgba(6, 182, 212, 0.08); padding: 1rem 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-overview); font-size: 0.9rem;">
+            <strong>High-Performance Rollout:</strong> ERPNext's lightweight database structure, event-driven socket pipelines, and built-in portal modules allow this architecture to scale efficiently without requiring massive custom middleware codebases.
+          </div>
+        </div>
+
+        <!-- Phased Implementation Timeline (Roadmap) -->
+        <div class="glass-panel timeline-card">
+          <h3>Implementation Roadmap & Phased Timeline</h3>
+          
+          <div class="roadmap-timeline">
+            
+            <div class="timeline-item left-item" style="--timeline-color: var(--color-jobs);">
+              <div class="timeline-content">
+                <span>Phase 1</span>
+                <h4>ERPNext Core Setup & HR Recruitment</h4>
+                <p>Deploy base Frappe instance. Enable ERPNext native web portal framework. Set up organizational structures and launch the native Job Board for candidates.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item right-item" style="--timeline-color: var(--color-ecommerce);">
+              <div class="timeline-content">
+                <span>Phase 2</span>
+                <h4>E-Commerce Multi-Channel API Connection</h4>
+                <p>Establish secure integration lines with Shopify, Flipkart, and Amazon. Build stock-level synchronization logic and automate stock reservation upon checkout.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item left-item" style="--timeline-color: var(--color-messaging);">
+              <div class="timeline-content">
+                <span>Phase 3</span>
+                <h4>Social Media Chat & Direct Messages</h4>
+                <p>Implement WebSockets (socket.io) on port 9000 for real-time messaging between user profiles, storing communication logs in custom Direct Message Doctype tables.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item right-item" style="--timeline-color: var(--color-streaming);">
+              <div class="timeline-content">
+                <span>Phase 4</span>
+                <h4>Live Video Stream Billing & Subscriptions</h4>
+                <p>Set up Subscription Plans and link billing to automated invoicing. Connect the external video player's authorization flow to our ERPNext verification API.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </section>
+
+      <!-- TAB 2: E-COMMERCE SYNC -->
+      <section id="ecommerce" class="page-section">
+        <div class="section-columns">
+          
+          <div class="primary-col">
+            <div class="glass-panel info-card">
+              <h3>
+                <svg viewBox="0 0 24 24" stroke="var(--color-ecommerce)" fill="none" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                E-Commerce Sync Workflow
+              </h3>
+              <p style="margin-bottom: 1rem;">
+                To synchronize multi-channel retail operations (Shopify web stores, Amazon storefront, and Flipkart marketplace), ERPNext acts as the single master database. This resolves inventory mismatches and consolidates order processing.
+              </p>
+              
+              <div class="flow-diagram-container">
+                <svg class="flow-line-svg">
+                  <!-- Connection path between nodes -->
+                  <path d="M 120 70 L 250 70 M 370 70 L 500 70" fill="none" stroke="var(--color-ecommerce)" stroke-width="2"/>
+                </svg>
+                <div class="flow-nodes-wrapper">
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(16, 185, 129, 0.15); color: var(--color-ecommerce);">🛒</div>
+                    <h4>E-Com Channels</h4>
+                    <p>Shopify, Amazon, Flipkart</p>
+                  </div>
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(6, 182, 212, 0.15); color: var(--color-overview);">⚡</div>
+                    <h4>Frappe REST / Hooks</h4>
+                    <p>Auth & Mapping layer</p>
+                  </div>
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(59, 130, 246, 0.15); color: var(--color-jobs);">📦</div>
+                    <h4>ERPNext Core</h4>
+                    <p>Sales Order & Inventory</p>
+                  </div>
+                  
+                </div>
+              </div>
+              
+              <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1.05rem;">Process Flow Description:</h4>
+              <ul style="margin-left: 1.25rem; font-size: 0.9rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><strong>Order Placement:</strong> Customer places order on Shopify, Flipkart, or Amazon. An API webhook triggers immediately.</li>
+                <li><strong>Validation & Allocation:</strong> ERPNext intercepts the JSON webhook, verifies authenticity, reserves physical items in the warehouse, and records a <code>Sales Order</code>.</li>
+                <li><strong>Stock Sync:</strong> Stock updates (decreases) trigger a push payload back to all sales channels to update their live inventory counts.</li>
+                <li><strong>Reconciliation:</strong> Payments and refunds process dynamically, automatically writing corresponding <code>Sales Invoice</code> and <code>Payment Entry</code> forms.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Doctypes List sidebar -->
+          <div class="secondary-col">
+            <div class="glass-panel doctype-list-card">
+              <h4>Database Doctypes</h4>
+              <p style="font-size: 0.8rem; color: var(--text-dark); margin-bottom: 1rem;">Click to view schema fields & rules</p>
+              
+              <div class="doctype-item" data-doctype="Item">
+                <div class="doctype-label">
+                  <span class="doctype-dot" style="background: var(--color-ecommerce);"></span>
+                  <span>Item</span>
+                </div>
+                <span class="doctype-badge badge-core">Core</span>
+              </div>
+              
+              <div class="doctype-item" data-doctype="Sales_Order">
+                <div class="doctype-label">
+                  <span class="doctype-dot" style="background: var(--color-ecommerce);"></span>
+                  <span>Sales Order</span>
+                </div>
+                <span class="doctype-badge badge-core">Core</span>
+              </div>
+              
+              <div class="doctype-item" data-doctype="Stock_Ledger_Entry">
+                <div class="doctype-label">
+                  <span class="doctype-dot" style="background: var(--color-ecommerce);"></span>
+                  <span>Stock Ledger Entry</span>
+                </div>
+                <span class="doctype-badge badge-core">Core</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- TAB 3: NATIVE JOB PORTAL -->
+      <section id="jobs" class="page-section">
+        <div class="section-columns">
+          
+          <div class="primary-col">
+            <div class="glass-panel info-card">
+              <h3>
+                <svg viewBox="0 0 24 24" stroke="var(--color-jobs)" fill="none" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                In-Built Native Job Portal Flow
+              </h3>
+              <p style="margin-bottom: 1rem;">
+                Rather than building a complex standalone job portal that requires manual data synchronization, we deploy **ERPNext's native recruitment and job board modules**. This leverages built-in web views to map candidate applications directly into HR workflows.
+              </p>
+              
+              <div class="flow-diagram-container">
+                <svg class="flow-line-svg">
+                  <path d="M 120 70 L 250 70 M 370 70 L 500 70" fill="none" stroke="var(--color-jobs)" stroke-width="2"/>
+                </svg>
+                <div class="flow-nodes-wrapper">
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(59, 130, 246, 0.15); color: var(--color-jobs);">💼</div>
+                    <h4>HR Manager</h4>
+                    <p>Publishes Job Opening</p>
+                  </div>
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(168, 85, 247, 0.15); color: var(--color-messaging);">🌐</div>
+                    <h4>ERPNext Portal</h4>
+                    <p>Candidate submits application</p>
+                  </div>
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(16, 185, 129, 0.15); color: var(--color-ecommerce);">👤</div>
+                    <h4>Staff Onboarding</h4>
+                    <p>Employee card is generated</p>
+                  </div>
+                  
+                </div>
+              </div>
+              
+              <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1.05rem;">Process Flow Description:</h4>
+              <ul style="margin-left: 1.25rem; font-size: 0.9rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><strong>Creating Vacancy:</strong> The HR team publishes a <code>Job Opening</code> directly in ERPNext. Setting 'Publish on Website' automatically displays the position on the built-in portal (/jobs).</li>
+                <li><strong>Application:</strong> Candidates fill out the job application form, upload resume files, and submit. The entry writes directly to the ERPNext database as a <code>Job Applicant</code>.</li>
+                <li><strong>Evaluation:</strong> HR moves applicants through a pre-defined workflow (Applied -> Shortlisted -> Interview -> Hired).</li>
+                <li><strong>Hiring:</strong> Upon hiring approval, a <code>Job Offer</code> generates. Acceptance triggers automated creation of the <code>Employee</code> card, initializing onboarding tasks.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="secondary-col">
+            <div class="glass-panel doctype-list-card">
+              <h4>Database Doctypes</h4>
+              <p style="font-size: 0.8rem; color: var(--text-dark); margin-bottom: 1rem;">Click to view schema fields & rules</p>
+              
+              <div class="doctype-item" data-doctype="Job_Opening">
+                <div class="doctype-label">
+                  <span class="doctype-dot" style="background: var(--color-jobs);"></span>
+                  <span>Job Opening</span>
+                </div>
+                <span class="doctype-badge badge-core">Core</span>
+              </div>
+              
+              <div class="doctype-item" data-doctype="Job_Applicant">
+                <div class="doctype-label">
+                  <span class="doctype-dot" style="background: var(--color-jobs);"></span>
+                  <span>Job Applicant</span>
+                </div>
+                <span class="doctype-badge badge-core">Core</span>
+              </div>
+              
+              <div class="doctype-item" data-doctype="Employee">
+                <div class="doctype-label">
+                  <span class="doctype-dot" style="background: var(--color-jobs);"></span>
+                  <span>Employee</span>
+                </div>
+                <span class="doctype-badge badge-core">Core</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- TAB 4: SOCIAL MEDIA MESSAGING -->
+      <section id="messaging" class="page-section">
+        <div class="section-columns">
+          
+          <div class="primary-col">
+            <div class="glass-panel info-card">
+              <h3>
+                <svg viewBox="0 0 24 24" stroke="var(--color-messaging)" fill="none" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Social Media Chat & Direct Messaging
+              </h3>
+              <p style="margin-bottom: 1rem;">
+                Enables social network-style communications inside the application. Users can set up a social profile, search for other users, and engage in private one-on-one chats (DMs). This provides direct, real-time connectivity between system subscribers, students, and employees.
+              </p>
+              
+              <div class="flow-diagram-container">
+                <svg class="flow-line-svg">
+                  <path d="M 120 70 L 250 70 M 370 70 L 500 70" fill="none" stroke="var(--color-messaging)" stroke-width="2"/>
+                </svg>
+                <div class="flow-nodes-wrapper">
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(168, 85, 247, 0.15); color: var(--color-messaging);">👤</div>
+                    <h4>Social Profiles</h4>
+                    <p>User Bio, Handle, Avatar</p>
+                  </div>
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(6, 182, 212, 0.15); color: var(--color-overview);">🔀</div>
+                    <h4>DM Room</h4>
+                    <p>1-to-1 websocket channel</p>
+                  </div>
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(244, 63, 94, 0.15); color: var(--color-streaming);">💾</div>
+                    <h4>Direct Message</h4>
+                    <p>Custom DocType message log</p>
+                  </div>
+                  
+                </div>
+              </div>
+              
+              <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1.05rem;">Process Flow Description:</h4>
+              <ul style="margin-left: 1.25rem; font-size: 0.9rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><strong>Profile Discovery:</strong> Users establish a public <code>Social Profile</code> inside the network, enabling search, discovery, and connection permissions.</li>
+                <li><strong>DM Room Hook:</strong> Initiating a direct message constructs a private 1-to-1 <code>DM Room</code> linking the sender and receiver profiles securely.</li>
+                <li><strong>WebSocket Delivery:</strong> Active chat messages route in real-time using socket.io over port 9000 and write instantly to the <code>Direct Message</code> database node.</li>
+                <li><strong>Privacy & Safety:</strong> Messages are strictly constrained to 1-to-1 channels, preventing group message leakages, and logs sync with compliance moderation rules.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="secondary-col">
+            <div class="glass-panel doctype-list-card">
+              <h4>Database Doctypes</h4>
+              <p style="font-size: 0.8rem; color: var(--text-dark); margin-bottom: 1rem;">Click to view schema fields & rules</p>
+              
+              <div class="doctype-item" data-doctype="Social_Profile">
+                <div class="doctype-label">
+                  <span class="doctype-dot" style="background: var(--color-messaging);"></span>
+                  <span>Social Profile</span>
+                </div>
+                <span class="doctype-badge badge-custom">Custom</span>
+              </div>
+              
+              <div class="doctype-item" data-doctype="DM_Room">
+                <div class="doctype-label">
+                  <span class="doctype-dot" style="background: var(--color-messaging);"></span>
+                  <span>DM Room</span>
+                </div>
+                <span class="doctype-badge badge-custom">Custom</span>
+              </div>
+              
+              <div class="doctype-item" data-doctype="Direct_Message">
+                <div class="doctype-label">
+                  <span class="doctype-dot" style="background: var(--color-messaging);"></span>
+                  <span>Direct Message</span>
+                </div>
+                <span class="doctype-badge badge-custom">Custom</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- TAB 5: STREAMING & SUBSCRIPTIONS -->
+      <section id="streaming" class="page-section">
+        <div class="section-columns">
+          
+          <div class="primary-col">
+            <div class="glass-panel info-card">
+              <h3>
+                <svg viewBox="0 0 24 24" stroke="var(--color-streaming)" fill="none" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                Streaming Authorization & Subscriptions
+              </h3>
+              <p style="margin-bottom: 1rem;">
+                **Vaps Tech** provides live video feeds and content archives. Instead of managing access control within the video platform itself, ERPNext manages subscription billing, while the video server calls a Frappe verification API before authorizing playback.
+              </p>
+              
+              <div class="flow-diagram-container">
+                <svg class="flow-line-svg">
+                  <path d="M 120 70 L 250 70 M 370 70 L 500 70" fill="none" stroke="var(--color-streaming)" stroke-width="2"/>
+                </svg>
+                <div class="flow-nodes-wrapper">
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(244, 63, 94, 0.15); color: var(--color-streaming);">📺</div>
+                    <h4>Video Player</h4>
+                    <p>Request stream session</p>
+                  </div>
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(59, 130, 246, 0.15); color: var(--color-jobs);">🌐</div>
+                    <h4>Media Server</h4>
+                    <p>Queries ERPNext validation REST API</p>
+                  </div>
+                  
+                  <div class="flow-node">
+                    <div class="node-icon-bg" style="background: rgba(16, 185, 129, 0.15); color: var(--color-ecommerce);">💳</div>
+                    <h4>ERPNext Engine</h4>
+                    <p>Validates Subscription</p>
+                  </div>
+                  
+                </div>
+              </div>
+              
+              <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1.05rem;">Process Flow Description:</h4>
+              <ul style="margin-left: 1.25rem; font-size: 0.9rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><strong>Asset Request:</strong> A viewer clicks play on a live stream in the browser client. The player requests authorization keys.</li>
+                <li><strong>API Verification Check:</strong> The media server hooks into Frappe's verification API endpoint (e.g. `/api/method/streaming.validate_subscription`), passing User ID and Asset SKU.</li>
+                <li><strong>Database Rule Lookup:</strong> Frappe queries the active <code>Subscription</code> document associated with the Customer. If the state is 'Active' and payment holds good, it returns 'ALLOWED'.</li>
+                <li><strong>Stream Delivery:</strong> If subscription check returns false, the player denies playback and launches a Subscription Billing billing widget.</li>
+                <li><strong>Billing Engine:</strong> Recurring invoice schedules generate <code>Sales Invoice</code> transactions in ERPNext at defined intervals.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="secondary-col">
+            <div class="glass-panel doctype-list-card">
+              <h4>Database Doctypes</h4>
+              <p style="font-size: 0.8rem; color: var(--text-dark); margin-bottom: 1rem;">Click to view schema fields & rules</p>
+              
+              <div class="doctype-item" data-doctype="Subscription_Plan">
+                <div class="doctype-label">
+                  <span class="doctype-dot" style="background: var(--color-streaming);"></span>
+                  <span>Subscription Plan</span>
+                </div>
+                <span class="doctype-badge badge-core">Core</span>
+              </div>
+              
+              <div class="doctype-item" data-doctype="Subscription">
+                <div class="doctype-label">
+                  <span class="doctype-dot" style="background: var(--color-streaming);"></span>
+                  <span>Subscription</span>
+                </div>
+                <span class="doctype-badge badge-core">Core</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+
+
+    </main>
+    
+  </div>
+
+  <!-- Doctype Schema details Modal Overlay -->
+  <div class="doctype-modal" id="doctype-modal">
+    <div class="glass-panel modal-content">
+      <button class="modal-close-btn" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      
+      <div class="modal-header">
+        <h3 class="modal-title-text">DocType Schema</h3>
+        <p class="modal-description-text">Doctype description will render here dynamically.</p>
+      </div>
+      
+      <div class="field-table-wrapper">
+        <table class="field-table">
+          <thead>
+            <tr>
+              <th>Fieldname</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody id="modal-fields-tbody">
+            <!-- Dynamically populated in app.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
